@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.lorentzos.swipecards:library:1.0.9@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75b148e0a8469de6589d3c1872aeb13d/library-1.0.9/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75b148e0a8469de6589d3c1872aeb13d/library-1.0.9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75b148e0a8469de6589d3c1872aeb13d/library-1.0.9/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/GRizzly/Desktop/STUDIA/PROJEKTY/PindUZ_Mobile/app/src/main/res/layout/activity_authentication.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/GRizzly/Desktop/STUDIA/PROJEKTY/PindUZ_Mobile/app/src/main/res/layout/activity_chat.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/GRizzly/Desktop/STUDIA/PROJEKTY/PindUZ_Mobile/app/src/main/res/layout/activity_edit_profile.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/GRizzly/Desktop/STUDIA/PROJEKTY/PindUZ_Mobile/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/GRizzly/Desktop/STUDIA/PROJEKTY/PindUZ_Mobile/app/src/main/res/layout/activity_zoom_card.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/GRizzly/Desktop/STUDIA/PROJEKTY/PindUZ_Mobile/app/src/main/res/layout/fragment_user.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/GRizzly/Desktop/STUDIA/PROJEKTY/PindUZ_Mobile/app/src/main/res/layout/item_card.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/GRizzly/Desktop/STUDIA/PROJEKTY/PindUZ_Mobile/app/src/main/res/layout/item_chat_list.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/GRizzly/Desktop/STUDIA/PROJEKTY/PindUZ_Mobile/app/src/main/res/layout/item_match_list.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/kpenc/Desktop/PROJEKTY/PindUZMobile/app/src/main/res/drawable/chat_edit_text_background.xml" value="0.2046875" />
+        <entry key="..\:/Users/kpenc/Desktop/PROJEKTY/PindUZMobile/app/src/main/res/layout/activity_authentication.xml" value="0.1656534954407295" />
+        <entry key="..\:/Users/kpenc/Desktop/PROJEKTY/PindUZMobile/app/src/main/res/layout/activity_chat.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/kpenc/Desktop/PROJEKTY/PindUZMobile/app/src/main/res/layout/activity_edit_profile.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/kpenc/Desktop/PROJEKTY/PindUZMobile/app/src/main/res/layout/fragment_menu.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/kpenc/Desktop/PROJEKTY/PindUZMobile/app/src/main/res/menu/menu_main2.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/kpenc/Desktop/PROJEKTY/PindUZMobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3609375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
