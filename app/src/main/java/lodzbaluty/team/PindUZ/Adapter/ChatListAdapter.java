@@ -22,7 +22,7 @@ import java.util.List;
 
 
 /**
- * Adapter responsible for handling the display of the chats available to the user
+ * Handlowanie chatow w menu wiadomosci
  */
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatListViewHolders>{
@@ -46,11 +46,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
         return rcv;
     }
 
-    /**
-     * Populate the item_chat_list with user in the current position
-     * @param holder
-     * @param position - position of the list
-     */
+
     @Override
     public void onBindViewHolder(ChatListViewHolders holder, int position) {
 

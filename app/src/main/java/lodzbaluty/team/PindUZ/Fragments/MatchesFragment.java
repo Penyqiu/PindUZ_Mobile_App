@@ -28,8 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Displays MAthces Available to the user in two recyclerView, one for the most recent ones
- * the other for the ones with the most recent messages
+ * Panel matchy
  */
 public class MatchesFragment extends Fragment {
 
@@ -43,10 +42,7 @@ public class MatchesFragment extends Fragment {
     public MatchesFragment() {
     }
 
-    /**
-     * Returns a new instance of this fragment for the given section
-     * number.
-     */
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,9 +67,7 @@ public class MatchesFragment extends Fragment {
         return view;
     }
 
-    /**
-     * Initializes new Matches recyclerview
-     */
+
     private void initNewMatches(){
         RecyclerView mMatch = view.findViewById(R.id.match);
         mMatch.setNestedScrollingEnabled(false);
@@ -84,9 +78,7 @@ public class MatchesFragment extends Fragment {
         mMatch.setAdapter(mMatchesAdapter);
     }
 
-    /**
-     * Initializes new Chats recyclerview
-     */
+
     private void initChats(){
         RecyclerView mChat = view.findViewById(R.id.chat);
         mChat.setNestedScrollingEnabled(false);

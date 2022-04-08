@@ -22,7 +22,7 @@ import java.util.List;
 
 
 /**
- * Adapter responsible for handling the display of the Matches available to the user
+ * Handlowanie dobierania uzytkownika
  */
 
 public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.MatchesViewHolders>{
@@ -46,11 +46,7 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.MatchesV
         return rcv;
     }
 
-    /**
-     * Populate the item_chat_list with user in the current position
-     * @param holder
-     * @param position - position of the list
-     */
+
     @Override
     public void onBindViewHolder(MatchesViewHolders holder, int position) {
         holder.mLayout.setTag(matchesList.get(position).getUser().getUserId());

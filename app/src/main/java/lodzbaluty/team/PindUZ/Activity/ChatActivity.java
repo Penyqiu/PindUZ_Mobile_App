@@ -31,7 +31,7 @@ import java.util.Map;
 
 
 /**
- * Activity responsible for displaying chat's messages and for sending messages
+ * Wysylanie wiadomosci
  */
 public class ChatActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -89,11 +89,7 @@ public class ChatActivity extends AppCompatActivity {
         getMatchInfo();
     }
 
-    /**
-     * Send new message to this chat
-     *
-     * Checks if text to send is empty before that.
-     */
+
     private void sendMessage() {
         String sendMessageText = mSendEditText.getText().toString();
 
@@ -112,9 +108,7 @@ public class ChatActivity extends AppCompatActivity {
         mSendEditText.setText(null);
     }
 
-    /**
-     * Get chatId and calls the getChatMessages() after
-     */
+
     private void getChatId(){
         mDatabaseUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -133,11 +127,7 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Get every message of the current chat and populates the recycler view
-     * by adding each MessageObject to the resultsChat and updating the adapter
-     *
-     */
+
     private void getChatMessages() {
         mDatabaseChat.addChildEventListener(new ChildEventListener() {
             @Override
@@ -150,7 +140,7 @@ public class ChatActivity extends AppCompatActivity {
                     mChatLayoutManager.scrollToPosition(resultsChat.size() - 1);
                     mChatAdapter.notifyDataSetChanged();
 
-                    //makes sure the recyclerview scrolls to the newest message
+
                     mRecyclerView.postDelayed(() -> mRecyclerView.scrollToPosition(mRecyclerView.getAdapter().getItemCount() - 1), 1000);
 
 
@@ -173,11 +163,6 @@ public class ChatActivity extends AppCompatActivity {
     }
 
 
-
-
-    /**
-     * Fetches match info and populates the related design elements
-     */
     private void getMatchInfo(){
         DatabaseReference mMatchDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(matchId);
         mMatchDatabase.addListenerForSingleValueEvent(new ValueEventListener() {

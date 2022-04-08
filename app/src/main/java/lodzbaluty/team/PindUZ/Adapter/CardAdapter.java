@@ -16,7 +16,7 @@ import java.util.List;
 
 
 /**
- * Adapter responsible for handling the display of the Cards to the user
+ * Handlowanie kart usera
  */
 public class CardAdapter extends ArrayAdapter<UserObject>{
 
@@ -26,13 +26,6 @@ public class CardAdapter extends ArrayAdapter<UserObject>{
         super(context, resourceId, items);
     }
 
-    /**
-     * Populate the item_message with user in the current position
-     *
-     * Changes the message aspect if it is from the current user or the match
-     *
-     * @param position - position of the list
-     */
     public View getView(int position, View convertView, ViewGroup parent){
         UserObject card_item = getItem(position);
 

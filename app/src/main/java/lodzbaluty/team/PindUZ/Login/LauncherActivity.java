@@ -9,10 +9,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import lodzbaluty.team.PindUZ.Activity.MainActivity;
 
 /**
- * First activity of the app.
+ * glowny ekran
  *
- * Responsible for checking if the user is logged in or not and call
- * the AuthenticationActivity or MainActivity depending on that.
  */
 public class LauncherActivity extends AppCompatActivity {
 

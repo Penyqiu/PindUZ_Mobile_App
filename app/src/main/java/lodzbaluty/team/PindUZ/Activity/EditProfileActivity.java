@@ -34,7 +34,7 @@ import java.util.Map;
 
 
 /**
- * Activity responsible for handling the edit of user's data
+ * Handlowanie edytowanie danych
  */
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -82,7 +82,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         getUserInfo();
 
-        //on profile image click allow user to choose another pic by caling the responding intentt
+
         mProfileImage.setOnClickListener(view -> {
             Intent intent = new Intent(Intent.ACTION_PICK);
             intent.setType("image/*");
@@ -91,9 +91,7 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * Get user's current info data and populate the corresponding Elements
-     */
+
     private void getUserInfo() {
         mUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -122,10 +120,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * Store user's info in the database
-     * if the image has been changed then upload it to the storage
-     */
+
     private void saveUserInformation() {
 
         String userSex;
@@ -172,12 +167,7 @@ public class EditProfileActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Get the uri of the image the user picked if the result is successful
-     * @param requestCode - code of the request ( for the image request is 1)
-     * @param resultCode - if the result was successful
-     * @param data - data of the image fetched
-     */
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -187,7 +177,7 @@ public class EditProfileActivity extends AppCompatActivity {
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
                 Glide.with(getApplication())
-                        .load(bitmap) // Uri of the picture
+                        .load(bitmap)
                         .apply(RequestOptions.circleCropTransform())
                         .into(mProfileImage);
             } catch (IOException e) {

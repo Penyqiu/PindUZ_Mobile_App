@@ -44,12 +44,7 @@ import io.nlopez.smartlocation.SmartLocation;
 import io.nlopez.smartlocation.location.providers.LocationGooglePlayServicesProvider;
 
 /**
- * This Activity controls the display of main fragments of the app:
- *  -UserFragment
- *  -CardFragment
- *  -ChatFragment
- *
- *  It is also responsible for initializing the onesignal API for the current user
+Handlowanie lokalizacji itd
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -70,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //save the notificationID to the database
+
         OneSignal.startInit(this).init();
         OneSignal.sendTag("User_ID", FirebaseAuth.getInstance().getCurrentUser().getUid());
         OneSignal.setEmail(FirebaseAuth.getInstance().getCurrentUser().getEmail());
@@ -82,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        //Listener responsible for changing the color of the elected fragment's icon
+
         tabLayout.addOnTabSelectedListener(
                 new TabLayout.ViewPagerOnTabSelectedListener(viewPager) {
                     @Override
@@ -107,13 +102,13 @@ public class MainActivity extends AppCompatActivity {
         );
         setupTabIcons();
 
-        //Starts the custom view for each tab
+
         for (int i = 0; i < tabLayout.getTabCount(); i++) {
             TabLayout.Tab tab = tabLayout.getTabAt(i);
             if (tab != null) tab.setCustomView(R.layout.view_home_tab);
         }
 
-        //Makes it so that the first fragment displayed is the CardFragment
+
         viewPager.setCurrentItem(1, false);
 
         getPermissions();
@@ -121,13 +116,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-    /**
-     * Get Current User Location if location is enabled,
-     * if it is available and the app is able to find a valid location
-     * then update the user location's database with the most updated location
-     */
     Boolean locationGotten = false;
     private void getLocation() {
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -157,9 +145,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * if gps location is disabled then ask user to enable it with a dialog
-     */
+
     public void isLocationEnable() {
         LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         boolean gps_enabled = false;
@@ -187,9 +173,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Get Permissions needed to get location
-     */
+
     private void getPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1);
@@ -197,19 +181,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * Chooses the tab icons for each fragment
-     */
+
     private void setupTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
     }
 
-    /**
-     * Set up of the view pager and add the fragments to the view pager
-     * @param viewPager - Layout manager of the fragments
-     */
+
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new UserFragment(), "ONE");
@@ -218,9 +197,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    /**
-     * Controls the fragments being displayed
-     */
+
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
@@ -244,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
             mFragmentTitleList.add(title);
         }
 
-        //Uncomment to display titles
+
         @Override
         public CharSequence getPageTitle(int position) {
             //return mFragmentTitleList.get(position);
@@ -259,23 +236,20 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case 1: {
 
-                // If request is cancelled, the result arrays are empty.
+
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                     isLocationEnable();
                 } else {
 
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
+
                     Toast.makeText(MainActivity.this, "Permission denied to read your Location, app will not show cards because of this", Toast.LENGTH_SHORT).show();
 
                 }
                 return;
             }
 
-            // other 'case' lines to check for other
-            // permissions this app might request
         }
     }
 }

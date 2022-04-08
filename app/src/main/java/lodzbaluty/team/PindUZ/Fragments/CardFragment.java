@@ -38,9 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Activity that displays the cards to the user
- *
- * It displays them in a way that is within the search params of the current logged in user
+ * Wyswietla karty
  */
 public class CardFragment  extends Fragment {
 
@@ -125,7 +123,7 @@ public class CardFragment  extends Fragment {
         });
 
 
-        // Optionally add an OnItemClickListener
+
         flingContainer.setOnItemClickListener((itemPosition, dataObject) -> {
             UserObject UserObject = (UserObject) dataObject;
             Intent i = new Intent(getContext(), ZoomCardActivity.class);
@@ -139,7 +137,7 @@ public class CardFragment  extends Fragment {
         FloatingActionButton fabLike = view.findViewById(R.id.fabLike);
         FloatingActionButton fabNope = view.findViewById(R.id.fabNope);
 
-        //Listeners for the fab buttons, they do the same as the swipe feature, but withe the click of the buttons
+
         fabLike.setOnClickListener(v -> {
             if(rowItems.size()!=0)
                 flingContainer.getTopCardListener().selectRight();
@@ -154,13 +152,7 @@ public class CardFragment  extends Fragment {
 
 
     GeoQuery geoQuery;
-    /**
-     * Fetch closest users to the current user using a GeoQuery.
-     *
-     * The users found are within a radius defined in the SearchObject and the center of
-     * the radius is the current user's location
-     * @param lastKnowLocation - user last know location
-     */
+///////////Lokalizacja
     public void getCloseUsers(Location lastKnowLocation){
         rowItems.clear();
 
@@ -190,10 +182,7 @@ public class CardFragment  extends Fragment {
         });
     }
 
-    /**
-     * Checks if new connection is a match if it is then add it to the database and create a new chat
-     * @param userId
-     */
+
     private void isConnectionMatch(String userId) {
         DatabaseReference currentUserConnectionsDb = usersDb.child(currentUId).child("connections").child("yeps").child(userId);
         currentUserConnectionsDb.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -223,12 +212,7 @@ public class CardFragment  extends Fragment {
 
     private String  userInterest = "Male";
 
-    /**
-     * Fetches user search params from the database
-     *
-     * After that call isLocationEnabled which will see if the location services are enabled
-     * and then fetch the last location known.
-     */
+
     private void fetchUserSearchParams(){
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference userDb = usersDb.child(user.getUid());
@@ -256,13 +240,7 @@ public class CardFragment  extends Fragment {
         });
     }
 
-    /**
-     * Get info of a user and check if that user is within the search params, if it is then
-     * add it to the list and update the adapter.
-     *
-     * Does not add the user if it is already a connection.
-     * @param userId - id of the user that's a possible user to display the card of
-     */
+
     private void getUsersInfo(String userId){
         for(UserObject mCard : rowItems){
             if(mCard.getUserId().equals(userId)){return;}

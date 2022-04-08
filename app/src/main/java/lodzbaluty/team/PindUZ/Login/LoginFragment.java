@@ -20,7 +20,7 @@ import lodzbaluty.team.PindUZ.R;
 
 
 /**
- * Fragment Responsible for Logging in an existing user
+ * Logowanie
  */
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
@@ -55,9 +55,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         initializeObjects();
     }
 
-    /**
-     * Sends an email to the email that's on the email input for the user to reset the password
-     */
+
     private void forgotPassword(){
         if (mEmail.getText().toString().trim().length() > 0)
             FirebaseAuth.getInstance().sendPasswordResetEmail(mEmail.getText().toString())
@@ -72,9 +70,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     });
     }
 
-    /**
-     * Logs in the user
-     */
+
     private void login(){
         final String email = mEmail.getText().toString();
         final String password = mPassword.getText().toString();
@@ -100,10 +96,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     }
 
 
-
-    /**
-     * Initializes the design Elements and calls clickListeners for them
-     */
     private void initializeObjects(){
         mEmail = view.findViewById(R.id.email);
         mPassword = view.findViewById(R.id.password);

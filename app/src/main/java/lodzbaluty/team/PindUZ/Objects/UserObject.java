@@ -4,9 +4,6 @@ import com.google.firebase.database.DataSnapshot;
 
 import java.io.Serializable;
 
-/**
- * Object of each card
- */
 public class UserObject implements Serializable {
     private String  userId = "--",
                     name = "--",

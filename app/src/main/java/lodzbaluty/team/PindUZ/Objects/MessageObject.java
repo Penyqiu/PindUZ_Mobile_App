@@ -4,9 +4,6 @@ package lodzbaluty.team.PindUZ.Objects;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 
-/**
- * Object of each message
- */
 
 public class MessageObject {
     private String message = "--";

@@ -17,7 +17,7 @@ import lodzbaluty.team.PindUZ.R;
 import java.util.List;
 
 /**
- * Adapter responsible for handling the display of the messages to the user
+ * Wyswietlanie wiadomosco
  */
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolders>{
     private List<MessageObject> chatList;
@@ -41,14 +41,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     }
 
 
-    /**
-     * Populate the item_message with user in the current position
-     *
-     * Changes the message aspect if it is from the current user or the match
-     *
-     * @param holder
-     * @param position - position of the list
-     */
+
     @Override
     public void onBindViewHolder(MessageViewHolders holder, int position) {
 

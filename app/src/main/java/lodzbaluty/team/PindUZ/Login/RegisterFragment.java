@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Fragment Responsible for registering a new user
+ * Rejestracja nowego usera
  */
 public class RegisterFragment extends Fragment implements View.OnClickListener {
 
@@ -60,10 +60,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     }
 
 
-    /**
-     * Register the user, but before that check if every field is correct.
-     * After that registers the user and creates an entry for it oin the database
-     */
     private void register(){
         if(mEmail.getText().length()==0) {
             mEmail.setError("please fill this field");

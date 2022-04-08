@@ -24,8 +24,7 @@ import lodzbaluty.team.PindUZ.R;
 import lodzbaluty.team.PindUZ.Activity.SettingsActivity;
 
 /**
- * Activity responsible for displaying the current user and the buttons to go
- * to the settingsActivity and EditProfileActivity
+ * Panel uzytkownika
  */
 public class UserFragment extends Fragment {
 
@@ -70,9 +69,6 @@ public class UserFragment extends Fragment {
     }
 
 
-    /**
-     * Fetches current user's info from the database
-     */
     private void getUserInfo() {
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);

@@ -11,9 +11,7 @@ import lodzbaluty.team.PindUZ.Objects.UserObject;
 import lodzbaluty.team.PindUZ.R;
 
 /**
- * Activity displayed when user clicks on a card
- *
- * It displays the user that was clicked on's information in detail
+ * Handlowanie klikniecia na karte
  */
 public class ZoomCardActivity extends AppCompatActivity {
 

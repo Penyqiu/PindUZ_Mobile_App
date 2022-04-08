@@ -24,11 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Activity that control the search settings of the user:
- *  -Search interest
- *  -Search Distance
- *
- *  Also has option to log out the user
+ * Handlowanie ustawien dobierania
  */
 public class SettingsActivity extends AppCompatActivity {
 
@@ -67,9 +63,6 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * Fetch user search settings and populates elements
-     */
     private void getUserInfo() {
         mUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -99,9 +92,6 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Saves user search settings to the database
-     */
     private void saveUserInformation() {
         String interest = "Both";
 
@@ -124,9 +114,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * Logs out user and takes it to the AuthenticationActivity
-     */
+
     private void logOut(){
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(SettingsActivity.this, AuthenticationActivity.class);

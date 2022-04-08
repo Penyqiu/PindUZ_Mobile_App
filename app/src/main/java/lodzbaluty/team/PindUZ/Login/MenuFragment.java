@@ -13,7 +13,7 @@ import lodzbaluty.team.PindUZ.R;
 
 
 /**
- * Fragment that allows the user to choose between going to the login or registration fragment
+ * wybor czy rejestracja czy logowanie
  */
 public class MenuFragment extends Fragment implements View.OnClickListener {
 
@@ -56,10 +56,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-
-    /**
-     * initializes the design Elements
-     */
     private void initializeObjects(){
         mLogin = view.findViewById(R.id.login);
         mRegistration = view.findViewById(R.id.registration);
